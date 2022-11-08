@@ -1,5 +1,5 @@
 const domain = {
-  api: "http://localhost:3000/api"
+  api: "https://mariceblogger-api-production.up.railway.app/api"
 }
 
 const urlBase = {
