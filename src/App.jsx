@@ -11,7 +11,7 @@ function App() {
     <>
       <Navbar />
       <div className="App">
-        { PageLists }
+        {PageLists}
       </div>
     </>
   )
