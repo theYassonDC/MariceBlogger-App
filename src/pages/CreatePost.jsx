@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import 'quill/dist/quill.snow.css'
+// import 'quill/dist/quill.snow.css'
 import PostService from '../services/posts_service'
 import toolbarOptions from '../utils/toolbar.config'
 import { useQuill } from 'react-quilljs'
