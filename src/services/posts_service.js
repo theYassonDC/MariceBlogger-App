@@ -9,12 +9,7 @@ class PostService {
   }
 
   async createPost(credets, token) {
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }
-    const { data } = await axios.post(urlBase.posts.add, credets, config)
+    const { data } = await axios.post(urlBase.posts.add, credets, config(token))
     return data
   }
 

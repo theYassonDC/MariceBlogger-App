@@ -23,11 +23,14 @@ function Navbar() {
             sesion ?
             <>
               <Link className="text-xl text-slate-700 ml-auto mr-8" to={"/create/post"}>Crear un nuevo post</Link>
+              <Link className="text-xl text-slate-700 mr-8" to={"/"}>Inicio</Link>
               <button className="text-xl text-red-400 hover:text-red-500" onClick={handleClick}>Cerrar sesion</button>
             </>
             :
             <>
-              <Link className="text-xl text-slate-700 ml-auto mr-8" to={"/login"}>Iniciar sesion</Link> 
+            
+              <Link className="text-xl text-slate-700 ml-auto mr-8" to={"/login"}>Iniciar sesion</Link>
+              <Link className="text-xl text-slate-700 mr-8" to={"/"}>Inicio</Link> 
               <Link className='text-xl text-slate-700' to={"/register"}>Empezar</Link>
             </>
           }

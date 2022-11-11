@@ -16,4 +16,9 @@ const toolbarOptions = [
   ['clean']                                       
 ];
 
-export default toolbarOptions;
+const modules = {
+  toolbar: toolbarOptions,
+};
+
+
+export default modules;

@@ -1,24 +1,27 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import 'quill/dist/quill.snow.css'
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import PostService from '../services/posts_service'
-import toolbarOptions from '../utils/toolbar.config'
-import { useQuill } from 'react-quilljs'
 import $ from '../utils/getElement'
 import getlocalStorage from '../utils/getLocalStorage'
+import modules from '../utils/toolbar.config'
 
 function CreatePost() {
-  const [state, setState] = useState(null)
+  const [state, setState] = useState('')
   const navigate = useNavigate()
   const { access_token, id } = getlocalStorage()
-  const { quill, quillRef } = useQuill({ modules: { toolbar: toolbarOptions } })
   const api = new PostService()
+  const onChange = (content, delta, source, editor) => {
+    const text = editor.getContents(content)
+    setState(text)
+  }
   const handleSubmit = async e => {
     e.preventDefault()
     const title = $("title").value
     await api.createPost({
       title,
-      content: JSON.stringify(quill.getContents()),
+      content: JSON.stringify(state),
       authorId: id
     }, access_token)
     navigate("../", {replace: true})
@@ -41,9 +44,7 @@ function CreatePost() {
         transition
         ease-in-out
         focus:text-gray-700 focus:bg-white focus:border-zinc-700 focus:outline-none'/>
-        <div className="editor my-7">
-          <div ref={quillRef}></div>
-        </div>
+        <ReactQuill theme="snow" value={state} onChange={onChange} modules={modules} />;
         <button type="submit" className="px-6
       py-2.5
       bg-green-500

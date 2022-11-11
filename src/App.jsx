@@ -5,7 +5,7 @@ import { routesList } from "./routes"
 import Navbar from './components/navbar';
 
 function App() {
-  const [count, setCount] = useState({})
+  const [production, setProduction] = useState({})
   const PageLists = useRoutes(routesList)
   return (
     <>
