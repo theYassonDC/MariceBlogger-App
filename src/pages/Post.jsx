@@ -10,7 +10,6 @@ import md5 from 'md5-hash'
 function Post() {
   const [state, setState] = useState(null)
   const [title, setTitle] = useState(null)
-
   const [comment, setComment] = useState({
     error: false,
     success: false
@@ -59,10 +58,10 @@ function Post() {
   })
   return (
     <>
-      <Link to="/">Volver</Link>
-      <div className='editor my-5'>
-        <h1 className='ml-4'>Post - {title}</h1>
-        <ReactQuill readOnly={true} value={state} modules={{ toolbar: false }} className="ml-auto m-20 mr-auto bg-slate-50" />
+      <Link to="/" className='p-3 hover:text-slate-600'>Volver</Link>
+      <div className='editor my-3'>
+        <h1 className='ml-4 text-4xl'>Post - {title}</h1>
+        <ReactQuill readOnly={true} value={state} modules={{ toolbar: false }} className="ml-auto m-16 mr-auto bg-slate-50" />
       </div>
       <div className='comment'>
         <h2 className='p-2 text-3xl'>Comentarios</h2>
@@ -128,7 +127,7 @@ function Post() {
                   <div key={i}>
                     <CommentCard avatar={`https://www.gravatar.com/avatar/${v.email}`}
                       name={v.emailName}
-                      time={v.date}
+                      time={v.date.slice(11, 16)}
                       content={v.comment}
                     />
                   </div>

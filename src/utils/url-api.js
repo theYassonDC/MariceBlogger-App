@@ -3,6 +3,7 @@ const domain = {
 }
 
 const urlBase = {
+  api_ping: domain.api,
   users: {
     gets: `${domain.api}/users`,
     create: `${domain.api}/users/create`

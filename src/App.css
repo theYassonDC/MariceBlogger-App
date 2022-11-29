@@ -1,4 +1,18 @@
-/* * {
+.prduct-m {
   cursor: no-drop;
-} */
+}
 
+body::-webkit-scrollbar {
+  width: 1px;
+  height: 0;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 2px;
+  height: 0;
+}

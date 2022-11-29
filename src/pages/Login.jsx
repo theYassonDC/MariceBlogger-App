@@ -31,7 +31,7 @@ function LoginPage() {
   return (
     <>
       <div className=''>
-        <h1 className='text-center my-24'>Logearme</h1>
+        <h1 className='text-center py-24'>Logearme</h1>
         {state ? <ErrorAlert message="Rellena todos los campos requeridos" /> : null}
         {state ? <ErrorAlert message="Contraseña o nombre de usuario incorrectos" /> : null}
         <div className='block p-6 ml-auto mr-auto my-11 rounded-lg shadow-lg bg-white max-w-sm'>
